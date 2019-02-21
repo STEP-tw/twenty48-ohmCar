@@ -27,10 +27,9 @@
   "Moves an entire grid to the right"
   (partial map (comp reverse move-left reverse)))
 
-(defn move-grid-down
+(def move-grid-down
   "Moves an entire grid down"
-  [grid]
-  grid)
+  (comp invert-grid move-grid-right invert-grid))
 
 (def move-grid-up
   "Moves an entire grid up"
