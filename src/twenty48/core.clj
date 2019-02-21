@@ -15,6 +15,8 @@
 
 (def move-left (comp add-subordinate-zeros add-consecutive-equals remove-zeros))
 
+(def invert-grid (partial apply map vector))
+
 ; -----------------------------------------------------------------------------------------------------------------------
 
 (def move-grid-left
@@ -30,9 +32,8 @@
   [grid]
   grid)
 
-(defn move-grid-up
+(def move-grid-up
   "Moves an entire grid up"
-  [grid]
-  grid)
+  (comp invert-grid move-grid-left invert-grid))
 
 ; -----------------------------------------------------------------------------------------------------------------------
