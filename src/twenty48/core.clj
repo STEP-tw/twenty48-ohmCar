@@ -11,9 +11,9 @@
 
 (def add-consecutive-equals (comp apply-addition combinations))
 
-(def add-subordinate-zeros (comp (partial take 4) (partial flatten) (partial conj (repeat 4 0))))
+(def append-zeros (comp (partial take 4) (partial flatten) (partial conj (repeat 4 0))))
 
-(def move-left (comp add-subordinate-zeros add-consecutive-equals remove-zeros))
+(def move-left (comp append-zeros add-consecutive-equals remove-zeros))
 
 (def invert-grid (partial apply map vector))
 
