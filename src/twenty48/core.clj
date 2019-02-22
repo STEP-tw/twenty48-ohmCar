@@ -11,7 +11,7 @@
 
 (def add-consecutive-equals (comp apply-addition combinations))
 
-(defn add-subordinate-zeros [row] (take 4 (concat row (repeat 0))))
+(def add-subordinate-zeros (comp (partial take 4) (partial flatten) (partial conj (repeat 4 0))))
 
 (def move-left (comp add-subordinate-zeros add-consecutive-equals remove-zeros))
 
